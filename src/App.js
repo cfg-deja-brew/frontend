@@ -8,7 +8,7 @@ function App() {
         <p>Search</p>
       </div>
       <div>
-        <p>Placeholder 2</p>
+        <p>Placeholder Two</p>
       </div>
       <div>
         <MapContainer />
