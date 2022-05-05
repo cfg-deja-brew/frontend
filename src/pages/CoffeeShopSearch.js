@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import CoffeeShopMap from './CoffeeShopMap';
-import { getCities } from './api/api.js'
+import CoffeeShopMap from '../components/CoffeeShopMap';
+import { getCities } from '../api/api.js'
 
-function App() {
+function CoffeeShopSearch() {
   const cities = getCities()
   const [selectedCity, setSelectedCity] = useState(cities[0])
 
@@ -26,4 +26,4 @@ function App() {
   )
 }
 
-export default App
+export default CoffeeShopSearch

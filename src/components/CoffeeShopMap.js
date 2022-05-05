@@ -1,6 +1,6 @@
 import { Wrapper, Status } from '@googlemaps/react-wrapper'
 import GoogleMap from './GoogleMap'
-import { getCoffeeShopLocations } from './api/api.js'
+import { getCoffeeShopLocations } from '../api/api.js'
 
 const render = (city, status) => {
   switch (status) {

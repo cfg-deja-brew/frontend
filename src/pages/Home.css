@@ -1,0 +1,13 @@
+body {
+  background-image: url('../assets/HomeBackground.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#root {
+  background-color: #0006;
+}
+
+.main-heading {
+  font-size: 3rem;
+}
