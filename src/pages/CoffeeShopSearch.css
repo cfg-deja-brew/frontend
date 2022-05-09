@@ -7,3 +7,23 @@ body {
 #root {
   background-color: #0007;
 }
+
+.logo {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 200px;
+}
+
+.dropdown .btn-outline-light {
+  width: 200px;
+  margin: 0px 30px 0px 150px;
+}
+
+.dropdown .btn-outline-light:not(:hover) {
+  background-color: rgba(186, 195, 200, 0.625);
+}
+
+.dropdown .dropdown-toggle:not(:hover) {
+  background-color: rgba(186, 195, 200, 0.625);
+}
