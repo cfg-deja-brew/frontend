@@ -13,7 +13,9 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/coffee-shop-search" element={<CoffeeShopSearch />} />
+        <Route path="/coffee-shop-search/leicester" element={<CoffeeShopSearch cityIndex={0} />} />
+        <Route path="/coffee-shop-search/nottingham" element={<CoffeeShopSearch cityIndex={1} />} />
+        <Route path="/coffee-shop-search/derby" element={<CoffeeShopSearch cityIndex={2} />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CoffeeShopMap from '../components/CoffeeShopMap';
 import { getCities } from '../api/api.js'
+import './CoffeeShopSearch.css' 
 
-function CoffeeShopSearch() {
+function CoffeeShopSearch({cityIndex = 0}) {
   const cities = getCities()
-  const [selectedCity, setSelectedCity] = useState(cities[0])
+  const selectedCity = cities[cityIndex]
 
   return (
     <div className="container h-100 py-5">
@@ -14,9 +15,9 @@ function CoffeeShopSearch() {
         </button>
         <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="cityDropdown">
           {cities.map((city) => <li>
-            <button className={`dropdown-item ${selectedCity.name === city.name ? 'active' : ''}`} onClick={() => setSelectedCity(city)}>
+            <Link to={`/coffee-shop-search/${city.name.toLowerCase()}`} className={`dropdown-item ${selectedCity.name === city.name ? 'active' : ''}`}>
               {city.name}
-            </button>
+            </Link>
           </li>)}
         </ul>
       </div>
