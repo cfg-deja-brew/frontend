@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import CoffeeShopMap from '../components/CoffeeShopMap';
+import InfoCard from '../components/InfoCard'
 import { getCities } from '../api/api.js'
 import './CoffeeShopSearch.css' 
 
@@ -29,11 +30,8 @@ function CoffeeShopSearch({cityIndex = 0}) {
           <CoffeeShopMap city={selectedCity} />
         </div>
         <div className="col-md-4">
-          <div className="card">
-            <div className="card-body">
-              Hello World
-            </div>
-          </div>
+          <InfoCard />
+          <InfoCard />
         </div>
       </div>
     </div>
