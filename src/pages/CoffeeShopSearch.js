@@ -9,12 +9,12 @@ function CoffeeShopSearch({cityIndex = 0}) {
   const selectedCity = cities[cityIndex]
 
   return (
-    <div className="container h-100 py-5">
-      <h1 className="d-flex align-items-center display-4 text-light mb-4">
+    <div className="container h-100 py-5" style={{marginTop:`2rem`}}>
+      <h1 className="d-flex align-items-center display-6 text-light mb-4">
         Coffee Shops in&ensp;
         <span className="dropdown">
           <button className="d-inline-flex align-items-center btn btn-lg btn-outline-light dropdown-toggle" type="button" id="cityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <h1 className="display-4 mb-0">{selectedCity.name}&nbsp;</h1>
+            <h1 className="display-6 mb-0">{selectedCity.name}&nbsp;</h1>
           </button>
           <ul className="dropdown-menu dropdown-menu-light" aria-labelledby="cityDropdown">
             {cities.map((city) => <li>
