@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
 
-
-
 function Home() {
   return (
     <div className="container h-100 py-5 d-flex flex-column justify-content-center align-items-center text-center text-light">

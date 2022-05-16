@@ -10,24 +10,14 @@ function GoogleMap({center, zoom, coffeeShops}) {
     })
     coffeeShops.forEach((coffeeShop) => {
       const marker = new window.google.maps.Marker({
-        position: coffeeShop.center,
+        position: {lat: parseFloat(coffeeShop.Latitude), lng: parseFloat(coffeeShop.Longitude)},
         map: map,
-        title: coffeeShop.name,
-      })
-      const infoWindow = new window.google.maps.InfoWindow({
-        content: `<h4>${coffeeShop.name}</h4>
-                  <strong>${coffeeShop.description}</strong>`,
-      })
-      marker.addListener("click", () => {
-        infoWindow.open({
-          anchor: marker,
-          map: map,
-        });
+        title: coffeeShop.CafeName,
       });
     })
   })
 
-  return <div ref={ref} className="h-50" />
+  return <div ref={ref} className="h-100" />
 }
 
 export default GoogleMap

@@ -20,3 +20,21 @@ body {
   background-color: rgba(186, 195, 200, 0.625);
 }
 
+.dropdown .dropdown-menu {
+  width: 100%;
+  min-width: unset;
+  text-align: center;
+}
+
+.dropdown .dropdown-item.active, .dropdown .dropdown-item:active {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.card-col {
+  overflow-y: scroll;
+}
+
+.card-col .card:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
