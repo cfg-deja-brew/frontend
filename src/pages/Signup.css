@@ -1,0 +1,20 @@
+body {
+    background-image: url('../assets/SearchBackground.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #root {
+    background-color: #0007;
+  }
+  
+  .Signup {
+    padding: 60px 0;
+  }
+
+  
+  
+  .Signup form {
+    margin: 0 auto;
+    max-width: 320px;
+  }

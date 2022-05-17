@@ -3,21 +3,38 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Signup.css";
 
-export default function Login() {
+export default function Signup() {
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
-
+  
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   return (
-    <div className="Signup">
+    <div className="Signup text-light">
       <Form onSubmit={handleSubmit}>
+      <Form.Group size="lg" controlId="name">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+      </Form.Group>
+      <Form.Group size="lg" controlId="number">
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control
+            type="number"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+          />
+        </Form.Group>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -36,7 +53,7 @@ export default function Login() {
           />
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
+          Sign Up
         </Button>
       </Form>
     </div>

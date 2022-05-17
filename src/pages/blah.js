@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./Login.css";
+import "./Signup.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ export default function Login() {
   }
 
   return (
-    <div className="Login text-light">
+    <div className="Signup">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
