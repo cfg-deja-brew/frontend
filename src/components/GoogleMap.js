@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import pin from '../assets/pin.svg';
+import selectedPin from '../assets/selectedPin.svg';
 
-function GoogleMap({center, zoom, coffeeShops}) {
+function GoogleMap({center, zoom, cafes, selectedCafe, setSelectedCafe}) {
   const ref = useRef()
 
   useEffect(() => {
@@ -8,12 +10,16 @@ function GoogleMap({center, zoom, coffeeShops}) {
       center,
       zoom,
     })
-    coffeeShops.forEach((coffeeShop) => {
+    cafes.forEach((cafe) => {
       const marker = new window.google.maps.Marker({
-        position: {lat: parseFloat(coffeeShop.Latitude), lng: parseFloat(coffeeShop.Longitude)},
+        position: {lat: parseFloat(cafe.Latitude), lng: parseFloat(cafe.Longitude)},
         map: map,
-        title: coffeeShop.CafeName,
-      });
+        title: cafe.CafeName,
+        icon: selectedCafe?.Id === cafe.Id ? selectedPin : pin
+      })
+      marker.addListener('click', function() {
+        setSelectedCafe(cafe)
+      })
     })
   })
 
