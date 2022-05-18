@@ -4,14 +4,15 @@ import Button from "react-bootstrap/Button";
 import "./Signup.css";
 
 export default function Signup() {
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const [FirstName, setFirstName] = useState("");
+  const [LastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
+  const [Mobile, setMobile] = useState("");
   
+  function validateForm() {
+    return email.length > 0 && Mobile.length > 0;
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -19,20 +20,20 @@ export default function Signup() {
   return (
     <div className="Signup text-light">
       <Form onSubmit={handleSubmit}>
-      <Form.Group size="lg" controlId="name">
-          <Form.Label>Name</Form.Label>
+      <Form.Group size="lg" controlId="FirstName">
+          <Form.Label>First Name</Form.Label>
           <Form.Control
-            type="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            type="FirstName"
+            value={FirstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
       </Form.Group>
-      <Form.Group size="lg" controlId="number">
-          <Form.Label>Phone Number</Form.Label>
+      <Form.Group size="lg" controlId="LastName">
+          <Form.Label>Last Name</Form.Label>
           <Form.Control
-            type="number"
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
+            type="LastName"
+            value={LastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </Form.Group>
         <Form.Group size="lg" controlId="email">
@@ -44,12 +45,12 @@ export default function Signup() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
+        <Form.Group size="lg" controlId="Mobile">
+          <Form.Label>Mobile</Form.Label>
           <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            type="Mobile"
+            value={Mobile}
+            onChange={(e) => setMobile(e.target.value)}
           />
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
