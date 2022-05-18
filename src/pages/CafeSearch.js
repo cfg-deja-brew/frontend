@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import CafeMap from '../components/CafeMap';
-import InfoCard from '../components/InfoCard'
-import { getCities, getCafes } from '../api/api.js'
+import InfoCard from '../components/InfoCard';
+import { getCities, getCafes } from '../api/api.js';
 import './CafeSearch.css'
 
 function CafeSearch({cityIndex = 0}) {
