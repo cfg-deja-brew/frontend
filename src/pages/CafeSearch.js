@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import CafeMap from '../components/CafeMap';
 import InfoCard from '../components/InfoCard';
+import FilterDropdown from '../components/FilterDropdown';
 import { getCities, getCafes } from '../api/api.js';
 import './CafeSearch.css'
 
@@ -24,6 +25,9 @@ function CafeSearch({cityIndex = 0}) {
           <button className="d-inline-flex align-items-center btn btn-lg btn-outline-light dropdown-toggle" type="button" id="cityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <h1 className="display-6 mb-0">{selectedCity.name}&nbsp;</h1>
           </button>
+          <div>
+            <FilterDropdown />
+          </div>
           <ul className="dropdown-menu dropdown-menu-light" aria-labelledby="cityDropdown">
             {cities.filter(city => selectedCity.name !== city.name)
                    .map(city => <li>
@@ -45,6 +49,7 @@ function CafeSearch({cityIndex = 0}) {
         </div>
       </div>
     </div>
+    
   )
 }
 
