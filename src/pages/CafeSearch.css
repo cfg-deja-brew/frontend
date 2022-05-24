@@ -8,6 +8,10 @@ body {
   background-color: #0007;
 }
 
+.FilterDropdown {
+  justify-content: end;
+}
+
 .dropdown .btn-outline-light {
   width: auto;
 }

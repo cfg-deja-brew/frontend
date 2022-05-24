@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Signup.css";
 
+
 export default function Signup() {
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
@@ -53,7 +54,7 @@ export default function Signup() {
             onChange={(e) => setMobile(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={() => { redirectTo('/Verify')}}>
           Sign Up
         </Button>
       </Form>

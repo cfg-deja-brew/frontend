@@ -1,5 +1,6 @@
 import React from "react";
 import './InfoCard.css';
+import LikeCafe from './LikeButton';
 
 const InfoCard = ({highlighted, name, description, opening, onClick=undefined}) => {
   return (
@@ -8,6 +9,7 @@ const InfoCard = ({highlighted, name, description, opening, onClick=undefined}) 
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{opening}</p>
         <small className="card-text">{description}</small>
+        <LikeCafe />
       </div>
     </div>
   );

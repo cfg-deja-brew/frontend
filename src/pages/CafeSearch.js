@@ -19,6 +19,7 @@ function CafeSearch({cityIndex = 0}) {
 
   return (
     <div className="container h-100 py-5" style={{marginTop:`2rem`}}>
+    <FilterDropdown />
       <h1 className="d-flex align-items-center display-6 text-light mb-4">
         Cafes in&ensp;
         <span className="dropdown">
@@ -26,7 +27,6 @@ function CafeSearch({cityIndex = 0}) {
             <h1 className="display-6 mb-0">{selectedCity.name}&nbsp;</h1>
           </button>
           <div>
-            <FilterDropdown />
           </div>
           <ul className="dropdown-menu dropdown-menu-light" aria-labelledby="cityDropdown">
             {cities.filter(city => selectedCity.name !== city.name)
