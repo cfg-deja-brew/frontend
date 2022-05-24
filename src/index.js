@@ -9,6 +9,7 @@ import Signup from './pages/Signup'
 import Navbar from './components/Navbar';
 import Verify from './pages/Verify';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './index.css';
 

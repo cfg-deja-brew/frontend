@@ -19,45 +19,26 @@ export default function Signup() {
   }
 
   return (
-    <div className="Signup text-light">
-      <Form onSubmit={handleSubmit}>
-      <Form.Group size="lg" controlId="FirstName">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            type="FirstName"
-            value={FirstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-      </Form.Group>
-      <Form.Group size="lg" controlId="LastName">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            type="LastName"
-            value={LastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="Mobile">
-          <Form.Label>Mobile</Form.Label>
-          <Form.Control
-            type="Mobile"
-            value={Mobile}
-            onChange={(e) => setMobile(e.target.value)}
-          />
-        </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={() => { redirectTo('/Verify')}}>
-          Sign Up
-        </Button>
-      </Form>
+    <div className="Signup container h-100 py-5 d-flex flex-column justify-content-center align-items-center text-light">
+      <form onSubmit={handleSubmit} className="w-50">
+        <div className="mb-3">
+          <label htmlFor="firstName" className="form-label fs-4">First name</label>
+          <input type="text" className="form-control form-control-lg" id="firstName" autoFocus={true} onChange={(e) => setFirstName(e.target.value)}/>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="lastName" className="form-label fs-4">Last name</label>
+          <input type="text" className="form-control form-control-lg" id="lastName" autoFocus={true} onChange={(e) => setLastName(e.target.value)}/>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label fs-4">Email</label>
+          <input type="email" className="form-control form-control-lg" id="email" autoFocus={true} onChange={(e) => setEmail(e.target.value)}/>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="phone" className="form-label fs-4">Mobile</label>
+          <input type="tel" className="form-control form-control-lg" id="phone" autoFocus={true} onChange={(e) => setMobile(e.target.value)}/>
+        </div>
+        <button type="submit" className="btn btn-lg btn-outline-light d-block w-100">Sign up</button>
+      </form>
     </div>
   );
 }

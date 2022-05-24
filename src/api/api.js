@@ -28,6 +28,20 @@ export function getCities() {
 }
 
 export async function getCafes(cityName) {
-  const response = await fetch(`http://127.0.0.1:5000/${cityName.toLowerCase()}`)
+  const response = await fetch(`http://127.0.0.1:4000/${cityName.toLowerCase()}`)
   return await response.json()
+}
+
+export async function login(form) {
+  const response = await fetch(`http://127.0.0.1:4000/login`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(form)
+  })
+  const responseJson = await response.json()
+  console.log(responseJson)
+  return await responseJson?.data
 }

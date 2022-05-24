@@ -19,25 +19,31 @@ function CafeSearch({cityIndex = 0}) {
 
   return (
     <div className="container h-100 py-5" style={{marginTop:`2rem`}}>
-    <FilterDropdown />
-      <h1 className="d-flex align-items-center display-6 text-light mb-4">
-        Cafes in&ensp;
-        <span className="dropdown">
-          <button className="d-inline-flex align-items-center btn btn-lg btn-outline-light dropdown-toggle" type="button" id="cityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <h1 className="display-6 mb-0">{selectedCity.name}&nbsp;</h1>
-          </button>
-          <div>
-          </div>
-          <ul className="dropdown-menu dropdown-menu-light" aria-labelledby="cityDropdown">
-            {cities.filter(city => selectedCity.name !== city.name)
-                   .map(city => <li>
-                                  <Link to={`/cafe-search/${city.name.toLowerCase()}`} className={`dropdown-item ${selectedCity.name === city.name ? 'active' : ''}`}>
-                                    {city.name}
-                                  </Link>
-                                </li>)}
-          </ul>
-        </span>
-      </h1>
+      <div className="row">
+        <div className="col-md-8">
+          <h1 className="d-flex justify-content-between display-6 text-light mb-4">
+            <span className="d-flex align-items-center">
+              Cafes in&ensp;
+              <span className="dropdown">
+                <button className="d-inline-flex align-items-center btn btn-lg btn-outline-light dropdown-toggle" type="button" id="cityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  <h1 className="display-6 mb-0">{selectedCity.name}&nbsp;</h1>
+                </button>
+                <div>
+                </div>
+                <ul className="dropdown-menu dropdown-menu-light" aria-labelledby="cityDropdown">
+                  {cities.filter(city => selectedCity.name !== city.name)
+                        .map(city => <li>
+                                        <Link to={`/cafe-search/${city.name.toLowerCase()}`} className={`dropdown-item ${selectedCity.name === city.name ? 'active' : ''}`}>
+                                          {city.name}
+                                        </Link>
+                                      </li>)}
+                </ul>
+              </span>
+            </span>
+            <FilterDropdown />
+          </h1>
+        </div>
+      </div>
       <div className="row h-75">
         <div className="col-md-8 h-100">
           <CafeMap city={selectedCity} cafes={cafes} selectedCafe={selectedCafe} setSelectedCafe={setSelectedCafe}/>

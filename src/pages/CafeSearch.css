@@ -16,14 +16,6 @@ body {
   width: auto;
 }
 
-.dropdown .btn-outline-light:not(:hover) {
-  background-color: rgba(186, 195, 200, 0.625);
-}
-
-.dropdown .dropdown-toggle:not(:hover) {
-  background-color: rgba(186, 195, 200, 0.625);
-}
-
 .dropdown .dropdown-menu {
   width: 100%;
   min-width: unset;

@@ -13,8 +13,6 @@ function Home() {
         <Link to="/cafe-search/derby" className="btn btn-lg btn-outline-light">Derby</Link>
       </div>
     </div>
-    
-
   )
 }
 
