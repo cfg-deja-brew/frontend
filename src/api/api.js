@@ -42,6 +42,10 @@ export async function login(form) {
     body: JSON.stringify(form)
   })
   const responseJson = await response.json()
-  console.log(responseJson)
   return await responseJson?.data
+}
+
+export async function getUserInfo(sessionId) {
+  const response = await fetch(`http://127.0.0.1:4000/users/${sessionId}`)
+  return await response.json()
 }

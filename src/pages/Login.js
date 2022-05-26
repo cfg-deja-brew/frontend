@@ -1,23 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import { login } from "../api/api";
 import "./Login.css";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(['sessionId'])
   const [mobile, setMobile] = useState("");
   const [code, setCode] = useState();
   const [mobileSubmitted, setMobileSubmitted] = useState(false);
+  const [message, setMessage] = useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const response = login({
+    const response = await login({
       mobile: mobile,
       code: code,
     })
-    if (response !== "error") {
-      setMobileSubmitted(true);
+    if (response === "error") {
+      setMessage("Details incorrect")
     }
-    if (response !== "error" && response !== "success") {
-      console.log(response.data.SessionId)
+    else {
+      setMobileSubmitted(true);
+      if (response === "success") {
+        setMessage("A code has been sent")
+      } else {
+        setMessage("")
+        setCookie("sessionId", String(response.SessionId))
+        navigate("/")
+      }
     }
   }
 
@@ -33,6 +45,7 @@ export default function Login() {
           <input type="tel" className="form-control form-control-lg" id="code" autoFocus={true} onChange={(e) => setCode(e.target.value)}/>
         </div>
         <button type="submit" className="btn btn-lg btn-outline-light d-block w-100">Login</button>
+        <p className="mt-2 text-center">{message}</p>
       </form>
     </div>
   );

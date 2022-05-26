@@ -23,3 +23,7 @@ html, body, #root {
 .btn-outline-light:not(:hover) {
   background-color: rgba(186, 195, 200, 0.625);
 }
+
+.transparent-background {
+  background-color: rgba(186, 195, 200, 0.625);
+}
