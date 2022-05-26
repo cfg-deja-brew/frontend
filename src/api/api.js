@@ -27,8 +27,8 @@ export function getCities() {
   ]
 }
 
-export async function getCafes(cityName) {
-  const response = await fetch(`http://127.0.0.1:4000/${cityName.toLowerCase()}`)
+export async function getCafes(cityName, filters) {
+  const response = await fetch(`http://127.0.0.1:4000/${cityName.toLowerCase()}?` + new URLSearchParams(filters))
   return await response.json()
 }
 

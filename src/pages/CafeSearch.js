@@ -2,9 +2,9 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import CafeMap from '../components/CafeMap';
 import InfoCard from '../components/InfoCard';
-import FilterDropdown from '../components/FilterDropdown';
 import { getCities, getCafes } from '../api/api.js';
-import './CafeSearch.css'
+import './CafeSearch.css';
+import FilterModal from '../components/FilterModal';
 
 function CafeSearch({cityIndex = 0}) {
   const cities = getCities()
@@ -14,7 +14,15 @@ function CafeSearch({cityIndex = 0}) {
 
   useEffect(function() {
     setSelectedCafe(null)
-    getCafes(selectedCity.name).then(setCafes)
+    getCafes(selectedCity.name, {
+      veganFriendly: false,
+      accessible: false,
+      dogFriendly: false,
+      workFriendly: false,
+      trendy: false,
+      parking: false,
+      dateFriendly: false,
+    }).then(setCafes)
   }, [selectedCity.name])
 
   return (
@@ -40,8 +48,11 @@ function CafeSearch({cityIndex = 0}) {
                 </ul>
               </span>
             </span>
-            <FilterDropdown />
+            <button className="btn btn-lg btn-outline-light right" type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
+              <h1 className="display-6 mb-0">Filters <i className="bi bi-filter"></i></h1>
+            </button>
           </h1>
+          <FilterModal selectedCity={selectedCity} setSelectedCafe={setSelectedCafe} setCafes={setCafes} />
         </div>
       </div>
       <div className="row h-75">
