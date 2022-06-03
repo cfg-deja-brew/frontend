@@ -17,6 +17,7 @@ Deja Brew Documentation
 twilio_account_sid = 'ACb7f4ee561c5fda8544277315de007d1c'
 
 twilio_auth_token = '0394f694d509a57539ceb680d3853a24'
+
 8. After saving everything, right click and run app.py
 9. Once this is running, go to the frontend and in the terminal, type: npm start
 10. There you go!
